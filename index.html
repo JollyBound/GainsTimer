@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <title>RustyGains.com</title>
+    <style>
+      html,
+      body {
+        background-color: #291A63;
+        color: #FFF;
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+      }
+      .box {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+      }
+      .box span {
+        color: #E42E77;
+      }
+      .box h1 {
+        font-size: 4em;
+        line-height: 25px;
+      }
+
+      .desc {
+        background: -webkit-linear-gradient(right, #00CCFF, #E42E77);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .timer {
+        text-align: center;
+      }
+      #timer {
+        text-align: center;
+        font-size: 2.5em;
+        line-height: 20px;
+        animation-duration: 1000ms;
+        animation-name: blink;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        -webkit-animation: blink 1000ms infinite;
+      }
+
+      @keyframes blink {
+        from {
+          color: #1C1C40;
+        }
+        to {
+          color: white;
+        }
+      }
+      @-webkit-keyframes blink {
+        from {
+          color: #E42E77;
+        }
+        to {
+          color: white;
+        }
+      }
+
+      .fab {
+        margin: 15px;
+        font-size: 2em;
+        cursor: pointer;
+      }
+
+      .fab:hover {
+        color: #3de16c;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="timer">
+        <img src="https://i.postimg.cc/J0ppwQYL/image-2021-08-31-182349.png" style="width: 80%; height: auto" /><br />
+        <div class="desc">Premier Rust Gambling.</div>
+        <i class="fab fa-discord"></i> <i class="fab fa-twitter"></i>
+        <p id="timer"> </p>
+        <br />
+      </div>
+    </div>
+
+    <script>
+       var countDownDate = new Date("Oct 1, 2021 00:00:00").getTime();
+       var x = setInterval(function () {
+         var now = new Date().getTime();
+
+         var distance = countDownDate - now;
+
+         var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+         var hours = Math.floor(
+           (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+         );
+         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+         document.getElementById("timer").innerHTML =
+           days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+         if (distance < 0) {
+           clearInterval(x);
+           document.getElementById("timer").innerHTML = "EXPIRED";
+         }
+       }, 1000);
+
+      document.querySelector(".fa-discord").onclick = function () {
+        location.href = "https://discord.gg/pKdx6dsK";
+      };
+
+      document.querySelector(".fa-twitter").onclick = function () {
+        location.href = "https://twitter.com/VersusAPCHI";
+      };
+    </script>
+  </body>
+</html>
