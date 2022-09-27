@@ -14,11 +14,11 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
-    <title>RustyGains.com</title>
+    <title>arnonili</title>
     <style>
       html,
       body {
-        background-color: #291A63;
+        background-color: #000000;
         color: #FFF;
         font-family: "Poppins", sans-serif;
         margin: 0;
@@ -31,7 +31,7 @@
         width: 400px;
       }
       .box span {
-        color: #A2A201;
+        color: #E42E77;
       }
       .box h1 {
         font-size: 4em;
@@ -39,7 +39,7 @@
       }
 
       .desc {
-        background: -webkit-linear-gradient(right, #00CCFF, #E42E77);
+        background: -webkit-linear-gradient(right, #ffffff, #ffffff);
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -90,12 +90,44 @@
   <body>
     <div class="box">
       <div class="timer">
-        <img src="https://i.postimg.cc/J0ppwQYL/image-2021-08-31-182349.png" style="width: 80%; height: auto" /><br />
-        <div class="desc">Premier Rust Gambling.</div>
-        <i class="fab fa-discord"></i> <i class="fab fa-twitter"></i>
+        <img src="https://i.postimg.cc/h40ggjHp/Group-1.png" style="width: 80%; height: auto" /><br />
+        <div class="desc"></div>
+
         <p id="timer"> </p>
         <br />
       </div>
     </div>
+
+    <script>
+       var countDownDate = new Date("Sep 28, 2022 18:00:00").getTime();
+       var x = setInterval(function () {
+         var now = new Date().getTime();
+
+         var distance = countDownDate - now;
+
+         var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+         var hours = Math.floor(
+           (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+         );
+         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+         document.getElementById("timer").innerHTML =
+           days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+         if (distance < 0) {
+           clearInterval(x);
+           document.getElementById("timer").innerHTML = "EXPIRED";
+         }
+       }, 1000);
+
+      document.querySelector(".fa-discord").onclick = function () {
+        location.href = "https://discord.gg/pKdx6dsK";
+      };
+
+      document.querySelector(".fa-twitter").onclick = function () {
+        location.href = "https://twitter.com/VersusAPCHI";
+      };
+    </script>
   </body>
 </html>
